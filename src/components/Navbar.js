@@ -7,10 +7,10 @@ export default function Navbar(props) {
     >
       <div className="container-fluid">
         <div>
-          <Link className={`navbar-brand text-${props.arr[1]} border px-2`} to="/">
+          <Link className={`navbar-brand text-${props.arr[1]} border px-2`} to="TextAnalyzer/">
             {props.title}
           </Link>
-          <Link className={`navbar-brand text-${props.arr[1]} border px-2`} to="/About">
+          <Link className={`navbar-brand text-${props.arr[1]} border px-2`} to="TextAnalyzer/About">
              About
           </Link>
         </div>

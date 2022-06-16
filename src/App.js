@@ -27,8 +27,8 @@ function App() {
       <Navbar title="Home" arr={arr} toggleColor={toggleColor} />
       <Alert alertText={alertText} />
       <Routes>
-        <Route path="/" element={<TextForm heading="Text Analyzer" arr={arr} showAlert={showAlert}/>} />
-        <Route path="about" element={<About arr={arr}/>} />
+        <Route path="TextAnalyzer/" element={<TextForm heading="Text Analyzer" arr={arr} showAlert={showAlert}/>} />
+        <Route path="TextAnalyzer/about" element={<About arr={arr}/>} />
       </Routes>
     </>
   );
