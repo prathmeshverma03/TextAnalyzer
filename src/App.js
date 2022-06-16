@@ -5,7 +5,6 @@ import Alert from "./components/Alert";
 import React, { useState } from "react";
 import About from "./components/About";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
@@ -24,15 +23,16 @@ function App() {
       },1000);
   }
   return (
-    <>
-      <Router basename="/TextAnalyzer"></Router>
+       <>
+      
       <Navbar title="Home" arr={arr} toggleColor={toggleColor} />
       <Alert alertText={alertText} arr={arr}/>
       <Routes>
-        <Route path="/" element={<TextForm heading="Text Analyzer" arr={arr} showAlert={showAlert}/>} />
-        <Route path="/about" element={<About arr={arr}/>} />
+        <Route path="TextAnalyzer/" element={<TextForm heading="Text Analyzer" arr={arr} showAlert={showAlert}/>} />
+        <Route path="TextAnalyzer/about" element={<About arr={arr}/>} />
       </Routes>
-    </>
+      </>
+    
   );
 }
 
