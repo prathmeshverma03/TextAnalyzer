@@ -6,7 +6,7 @@ export default function TextForm(props) {
   const whenChanged = (event) => {
     setText(event.target.value);
     setMod(
-      event.target.value.replace(/^[ ]+|[ ]+$/g, "").replace(/[ ]+/g, " ")
+      event.target.value.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " ")
     );
   };
   const whenClicked1 = () => {
@@ -20,6 +20,7 @@ export default function TextForm(props) {
   };
   const whenClicked3 = () => {
     setText("");
+    setMod("");
     props.showAlert("Succesfully Erased");
 
   };
@@ -71,6 +72,7 @@ export default function TextForm(props) {
                 className="btn btn-primary"
                 onClick={whenClicked1}
                 type="button"
+                disabled = {mod.length===0}
               >
                 Convert to UPPERCASE
               </button>
@@ -81,6 +83,7 @@ export default function TextForm(props) {
                 className="btn btn-primary"
                 onClick={whenClicked2}
                 type="button"
+                disabled = {mod.length===0}
               >
                 Convert to lowercase
               </button>
@@ -91,6 +94,7 @@ export default function TextForm(props) {
                 className="btn btn-primary"
                 onClick={whenClicked3}
                 type="button"
+                disabled = {mod.length===0}
               >
                 Erase Text
               </button>
@@ -101,6 +105,7 @@ export default function TextForm(props) {
                 className="btn btn-primary"
                 onClick={whenClicked4}
                 type="button"
+                disabled = {mod.length===0}
               >
                 Copy Text
               </button>
@@ -111,6 +116,7 @@ export default function TextForm(props) {
                 className="btn btn-primary"
                 onClick={whenClicked5}
                 type="button"
+                disabled = {mod.length===0}
               >
                 Cut Text
               </button>
@@ -121,6 +127,7 @@ export default function TextForm(props) {
                 className="btn btn-primary"
                 onClick={whenClicked6}
                 type="button"
+                disabled = {mod.length===0}
               >
                 Remove Extra Spaces
               </button>
@@ -131,11 +138,11 @@ export default function TextForm(props) {
       <div className="mx-3 text-center my-3">
         <h2>Text Summary</h2>
         <h3>
-          Number of words = {mod.length !== 0 ? mod.split(" ").length : 0}
+          Number of words = {mod.length !== 0 ? mod.split(/\s+/).length : 0}
         </h3>
         <h3>
           Number of characters ={" "}
-          {text.length - (text.match(/[ ]/g) || []).length}
+          {text.length - (text.match(/\s/g) || []).length}
         </h3>
       </div>
     </div>

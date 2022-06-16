@@ -22,6 +22,7 @@ export default function Navbar(props) {
               role="switch"
               onClick={props.toggleColor}
               id="flexSwitchCheckDefault"
+              style={{cursor : 'pointer'}}
             />
             <label
               className="form-check-label"
